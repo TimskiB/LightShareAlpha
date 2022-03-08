@@ -21,7 +21,7 @@ class UploadFileWidget extends StatefulWidget {
 
 class _UploadFileWidgetState extends State<UploadFileWidget>
     with TickerProviderStateMixin {
-  List<String> fileData;
+  String fileData;
   String uploadStatus;
   final animationsMap = {
     'containerOnPageLoadAnimation': AnimationInfo(
@@ -197,10 +197,10 @@ class _UploadFileWidgetState extends State<UploadFileWidget>
                             FFButtonWidget(
                               onPressed: () async {
                                 uploadStatus = await actions.uploadFileAction(
-                                  fileData.toList(),
+                                  fileData,
                                   valueOrDefault<String>(
-                                    FFAppState().userid,
-                                    'no-local-state',
+                                    widget.userID,
+                                    'default-param',
                                   ),
                                 );
                                 ScaffoldMessenger.of(context).showSnackBar(

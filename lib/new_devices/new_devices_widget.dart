@@ -92,7 +92,7 @@ class _NewDevicesWidgetState extends State<NewDevicesWidget> {
                             height: MediaQuery.of(context).size.height * 0.6,
                             child: NewDeviceWidget(
                               userID: valueOrDefault<String>(
-                                widget.userID,
+                                newDevicesUsersRecord.uid,
                                 'default',
                               ),
                               deviceUidPar: valueOrDefault<String>(

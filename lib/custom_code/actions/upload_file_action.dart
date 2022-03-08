@@ -6,27 +6,29 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 import 'package:http/http.dart' as http;
 
-Future<String> uploadFileAction(List<String> fileData, String userId) async {
+//Future<String> uploadFileAction(List<String> fileData, String userId) async {
+Future<String> uploadFileAction(String fileData, String userId) async {
   // Add your function code here!
 
-  String name = fileData[0];
-  String path = fileData[1];
-  String size = fileData[2];
-  String fExtension = fileData[3];
+  String name = fileData;
+  //String name = fileData[0];
+  //String path = fileData[1];
+  //String size = fileData[2];
+  //String fExtension = fileData[3];
 
   var request = http.MultipartRequest(
     "POST",
     Uri.parse(
-        "http://172.105.64.85:5555/storage/$userId/add?name=$name&type=$fExtension&size=$size"),
+        "http://172.105.64.85:5555/storage/$userId/add?name=$name&type=Image&size=0.015"),
   );
 
-  request.files.add(
-    await http.MultipartFile.fromPath(
-      'file', path,
-      //  contentType: MediaType('application', 'octet-stream'),
-      filename: name,
-    ),
-  );
+  //request.files.add(
+  //await http.MultipartFile.fromPath(
+  //'file', path,
+  //  contentType: MediaType('application', 'octet-stream'),
+  //filename: name,
+  //),
+  //);
   request.send().then((response) {
     if (response.statusCode == 200) {
       print("Uploaded!");

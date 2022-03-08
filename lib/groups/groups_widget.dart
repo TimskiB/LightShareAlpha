@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../components/new_group_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -266,47 +267,78 @@ class _GroupsWidgetState extends State<GroupsWidget> {
                 },
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Color(0xFF4E39F9),
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 4,
-                    color: Color(0x3314181B),
-                    offset: Offset(0, -2),
-                  )
-                ],
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0),
-                  bottomRight: Radius.circular(0),
-                  topLeft: Radius.circular(16),
-                  topRight: Radius.circular(16),
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 34),
-                child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+            InkWell(
+              onTap: () async {
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.of(context).viewInsets,
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        child: NewGroupWidget(),
+                      ),
+                    );
                   },
-                  text: 'Create Conversation ',
-                  options: FFButtonOptions(
-                    width: 130,
-                    height: 40,
-                    color: Color(0xFF4E39F9),
-                    textStyle: FlutterFlowTheme.of(context).title3.override(
-                          fontFamily: 'Lexend Deca',
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 0,
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Color(0xFF4E39F9),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 4,
+                      color: Color(0x3314181B),
+                      offset: Offset(0, -2),
+                    )
+                  ],
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(0),
+                    bottomRight: Radius.circular(0),
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 34),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await showModalBottomSheet(
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        context: context,
+                        builder: (context) {
+                          return Padding(
+                            padding: MediaQuery.of(context).viewInsets,
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.4,
+                              child: NewGroupWidget(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    text: 'Create Conversation ',
+                    options: FFButtonOptions(
+                      width: 130,
+                      height: 40,
+                      color: Color(0xFF4E39F9),
+                      textStyle: FlutterFlowTheme.of(context).title3.override(
+                            fontFamily: 'Lexend Deca',
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 0,
+                      ),
+                      borderRadius: 12,
                     ),
-                    borderRadius: 12,
                   ),
                 ),
               ),

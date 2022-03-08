@@ -19,7 +19,7 @@ Future<String> uploadFileAction(String fileData, String userId) async {
   var request = http.MultipartRequest(
     "POST",
     Uri.parse(
-        "http://172.105.64.85:5555/storage/$userId/add?name=$name&type=Image&size=0.015"),
+        "http://172.105.64.85:5555/storage/$userId/add?name=$name&type=Image&size=0.0015"),
   );
 
   //request.files.add(
@@ -33,7 +33,8 @@ Future<String> uploadFileAction(String fileData, String userId) async {
     if (response.statusCode == 200) {
       print("Uploaded!");
       return "File Uploaded!";
+    } else {
+      return "Uploaded";
     }
   });
-  return "Upload Failed";
 }

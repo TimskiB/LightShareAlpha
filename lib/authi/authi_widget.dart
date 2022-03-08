@@ -584,56 +584,40 @@ class _AuthiWidgetState extends State<AuthiWidget> {
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
-                                child: InkWell(
-                                  onTap: () async {
-                                    final user = await signInWithApple(context);
-                                    if (user == null) {
-                                      return;
-                                    }
-                                    await Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            NavBarPage(initialPage: 'HomePage'),
-                                      ),
-                                      (r) => false,
-                                    );
-                                  },
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color: Color(0xFF090F13),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          2, 2, 2, 2),
-                                      child: InkWell(
-                                        onTap: () async {
-                                          final user =
-                                              await signInWithApple(context);
-                                          if (user == null) {
-                                            return;
-                                          }
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => NavBarPage(
-                                                  initialPage: 'HomePage'),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
-                                        child: Container(
-                                          width: 50,
-                                          height: 50,
-                                          clipBehavior: Clip.antiAlias,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
+                                child: Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: Color(0xFF090F13),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2, 2, 2, 2),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        final user =
+                                            await signInWithApple(context);
+                                        if (user == null) {
+                                          return;
+                                        }
+                                        await Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => NavBarPage(
+                                                initialPage: 'HomePage'),
                                           ),
-                                          child: SvgPicture.asset(
-                                            'assets/images/social_Apple.svg',
-                                          ),
+                                          (r) => false,
+                                        );
+                                      },
+                                      child: Container(
+                                        width: 50,
+                                        height: 50,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: SvgPicture.asset(
+                                          'assets/images/social_Apple.svg',
                                         ),
                                       ),
                                     ),

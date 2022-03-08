@@ -1,4 +1,4 @@
-import '../auth/auth_widget.dart';
+import '../authi/authi_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -85,12 +85,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Text(
                                         'Quickly Share Content',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Colors.white,
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Colors.white,
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -104,13 +106,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                       Expanded(
                                         child: Text(
                                           'Be part of your multi-device content, \nsafely send content across devices.',
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -136,7 +139,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                                     Duration(milliseconds: 500),
                                                 reverseDuration:
                                                     Duration(milliseconds: 500),
-                                                child: AuthWidget(),
+                                                child: AuthiWidget(),
                                               ),
                                             );
                                           },
@@ -145,14 +148,16 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                             width: 170,
                                             height: 50,
                                             color: Color(0xFF39D2C0),
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                             elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -202,12 +207,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Text(
                                         'Share With Friends',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Colors.white,
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Colors.white,
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -221,13 +228,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                       Expanded(
                                         child: Text(
                                           'Stay in the loop with groups images and files, shared in a organized and safe way.',
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -253,7 +261,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                                     Duration(milliseconds: 500),
                                                 reverseDuration:
                                                     Duration(milliseconds: 500),
-                                                child: AuthWidget(),
+                                                child: AuthiWidget(),
                                               ),
                                             );
                                           },
@@ -262,14 +270,16 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                             width: 170,
                                             height: 50,
                                             color: Colors.white,
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0xFF39D2C0),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Color(0xFF39D2C0),
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                             elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -319,12 +329,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Text(
                                         'Unlimited Storage',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF151B1E),
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF151B1E),
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -338,13 +350,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                       Expanded(
                                         child: Text(
                                           'Store your files in an universal storage platform, organized your way.',
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF82878C),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0xFF82878C),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -370,7 +383,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                                     Duration(milliseconds: 500),
                                                 reverseDuration:
                                                     Duration(milliseconds: 500),
-                                                child: AuthWidget(),
+                                                child: AuthiWidget(),
                                               ),
                                             );
                                           },
@@ -379,14 +392,16 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                             width: 170,
                                             height: 50,
                                             color: Color(0xFF4B39EF),
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                             elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,

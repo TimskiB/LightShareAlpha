@@ -16,6 +16,9 @@ class FFAppState {
     prefs = await SharedPreferences.getInstance();
     _displayName = prefs.getString('ff_displayName') ?? _displayName;
     _email = prefs.getString('ff_email') ?? _email;
+    _userid = prefs.getString('ff_userid') ?? _userid;
+    _deviceID = prefs.getString('ff_deviceID') ?? _deviceID;
+    _deviceName = prefs.getString('ff_deviceName') ?? _deviceName;
   }
 
   SharedPreferences prefs;
@@ -38,6 +41,27 @@ class FFAppState {
   set email(String _value) {
     _email = _value;
     prefs.setString('ff_email', _value);
+  }
+
+  String _userid = 'default-id';
+  String get userid => _userid;
+  set userid(String _value) {
+    _userid = _value;
+    prefs.setString('ff_userid', _value);
+  }
+
+  String _deviceID = '';
+  String get deviceID => _deviceID;
+  set deviceID(String _value) {
+    _deviceID = _value;
+    prefs.setString('ff_deviceID', _value);
+  }
+
+  String _deviceName = '';
+  String get deviceName => _deviceName;
+  set deviceName(String _value) {
+    _deviceName = _value;
+    prefs.setString('ff_deviceName', _value);
   }
 }
 

@@ -5,6 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 
 import 'schema/users_record.dart';
+import 'schema/devices_record.dart';
+import 'schema/conversations_record.dart';
+import 'schema/chats_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,6 +15,9 @@ export 'schema/index.dart';
 export 'schema/serializers.dart';
 
 export 'schema/users_record.dart';
+export 'schema/devices_record.dart';
+export 'schema/conversations_record.dart';
+export 'schema/chats_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Stream<List<UsersRecord>> queryUsersRecord(
@@ -26,6 +32,53 @@ Future<List<UsersRecord>> queryUsersRecordOnce(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollectionOnce(UsersRecord.collection, UsersRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query DevicesRecords (as a Stream and as a Future).
+Stream<List<DevicesRecord>> queryDevicesRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(DevicesRecord.collection, DevicesRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<DevicesRecord>> queryDevicesRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(DevicesRecord.collection, DevicesRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query ConversationsRecords (as a Stream and as a Future).
+Stream<List<ConversationsRecord>> queryConversationsRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        ConversationsRecord.collection, ConversationsRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<ConversationsRecord>> queryConversationsRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(
+        ConversationsRecord.collection, ConversationsRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query ChatsRecords (as a Stream and as a Future).
+Stream<List<ChatsRecord>> queryChatsRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(ChatsRecord.collection, ChatsRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<ChatsRecord>> queryChatsRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(ChatsRecord.collection, ChatsRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

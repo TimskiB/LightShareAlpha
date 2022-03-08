@@ -28,7 +28,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.dark900,
+        backgroundColor: FlutterFlowTheme.of(context).dark900,
         automaticallyImplyLeading: false,
         leading: InkWell(
           onTap: () async {
@@ -42,24 +42,24 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
         ),
         title: Text(
           'Forgot Password',
-          style: FlutterFlowTheme.title2.override(
-            fontFamily: 'Lexend Deca',
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Lexend Deca',
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.dark900,
+      backgroundColor: FlutterFlowTheme.of(context).dark900,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 1,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.dark900,
+            color: FlutterFlowTheme.of(context).dark900,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -71,15 +71,15 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: 'Your Email Address',
-                    labelStyle: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0x98FFFFFF),
-                    ),
+                    labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0x98FFFFFF),
+                        ),
                     hintText: 'Please enter a email...',
-                    hintStyle: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
-                    ),
+                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Colors.white,
+                        ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
@@ -99,10 +99,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20, 24, 20, 24),
                   ),
-                  style: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Colors.white,
-                  ),
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Colors.white,
+                      ),
                   keyboardType: TextInputType.emailAddress,
                 ),
               ),
@@ -130,11 +130,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     width: 230,
                     height: 60,
                     color: Colors.white,
-                    textStyle: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF4B39EF),
-                      fontWeight: FontWeight.w500,
-                    ),
+                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF4B39EF),
+                          fontWeight: FontWeight.w500,
+                        ),
                     elevation: 3,
                     borderSide: BorderSide(
                       color: Colors.transparent,

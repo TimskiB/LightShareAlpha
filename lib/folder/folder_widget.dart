@@ -35,7 +35,7 @@ class _FolderWidgetState extends State<FolderWidget> {
           },
           child: Icon(
             Icons.chevron_left_rounded,
-            color: FlutterFlowTheme.primaryColor,
+            color: FlutterFlowTheme.of(context).primaryColor,
             size: 32,
           ),
         ),
@@ -44,7 +44,7 @@ class _FolderWidgetState extends State<FolderWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
             child: Icon(
               Icons.search_rounded,
-              color: FlutterFlowTheme.primaryColor,
+              color: FlutterFlowTheme.of(context).primaryColor,
               size: 32,
             ),
           ),
@@ -52,7 +52,7 @@ class _FolderWidgetState extends State<FolderWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
             child: Icon(
               Icons.more_vert,
-              color: FlutterFlowTheme.primaryColor,
+              color: FlutterFlowTheme.of(context).primaryColor,
               size: 32,
             ),
           ),
@@ -65,17 +65,17 @@ class _FolderWidgetState extends State<FolderWidget> {
         onPressed: () {
           print('FloatingActionButton pressed ...');
         },
-        backgroundColor: FlutterFlowTheme.primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         icon: Icon(
           Icons.add,
         ),
         elevation: 10,
         label: Text(
           'Add',
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.tertiaryColor,
-          ),
+          style: FlutterFlowTheme.of(context).bodyText1.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).tertiaryColor,
+              ),
         ),
       ),
       body: SafeArea(
@@ -92,11 +92,11 @@ class _FolderWidgetState extends State<FolderWidget> {
                   children: [
                     Text(
                       widget.folderName,
-                      style: FlutterFlowTheme.title1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: FlutterFlowTheme.dark900,
-                        fontSize: 32,
-                      ),
+                      style: FlutterFlowTheme.of(context).title1.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.of(context).dark900,
+                            fontSize: 32,
+                          ),
                     ),
                   ],
                 ),
@@ -117,18 +117,20 @@ class _FolderWidgetState extends State<FolderWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
                         child: FlutterFlowChoiceChips(
-                          initialOption: choiceChipsValue ??= 'Timeline',
+                          initiallySelected: [choiceChipsValue],
                           options: [ChipData('Timeline'), ChipData('Files')],
                           onChanged: (val) =>
-                              setState(() => choiceChipsValue = val),
+                              setState(() => choiceChipsValue = val.first),
                           selectedChipStyle: ChipStyle(
-                            backgroundColor: FlutterFlowTheme.primaryColor,
-                            textStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primaryColor,
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             iconColor: Colors.white,
                             iconSize: 18,
                             labelPadding:
@@ -137,12 +139,13 @@ class _FolderWidgetState extends State<FolderWidget> {
                           ),
                           unselectedChipStyle: ChipStyle(
                             backgroundColor: Color(0xFFDBE2E7),
-                            textStyle: FlutterFlowTheme.bodyText2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF262D34),
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodyText2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF262D34),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             iconColor: Color(0xFF262D34),
                             iconSize: 18,
                             labelPadding:
@@ -150,6 +153,7 @@ class _FolderWidgetState extends State<FolderWidget> {
                             elevation: 0,
                           ),
                           chipSpacing: 8,
+                          multiselect: false,
                         ),
                       ),
                     ),
@@ -161,10 +165,10 @@ class _FolderWidgetState extends State<FolderWidget> {
                 child: AutoSizeText(
                   'You have not added\n any files yet.',
                   textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.title2.override(
-                    fontFamily: 'Lexend Deca',
-                    color: FlutterFlowTheme.dark900,
-                  ),
+                  style: FlutterFlowTheme.of(context).title2.override(
+                        fontFamily: 'Lexend Deca',
+                        color: FlutterFlowTheme.of(context).dark900,
+                      ),
                 ),
               ),
             ],

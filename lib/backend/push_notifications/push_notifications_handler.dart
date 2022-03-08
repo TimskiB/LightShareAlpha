@@ -10,9 +10,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 import '../../main.dart';
+import '../../new_devices/new_devices_widget.dart';
 import '../../folder/folder_widget.dart';
 import '../../onboarding/onboarding_widget.dart';
-import '../../auth/auth_widget.dart';
+import '../../authi/authi_widget.dart';
 import '../../auth_register/auth_register_widget.dart';
 import '../../forgot_password/forgot_password_widget.dart';
 import '../../profile/profile_widget.dart';
@@ -74,7 +75,7 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: FlutterFlowTheme.tertiaryColor,
+          color: FlutterFlowTheme.of(context).tertiaryColor,
           child: Builder(
             builder: (context) => Image.asset(
               'assets/images/undraw_progressive_app_m9ms.png',
@@ -87,11 +88,16 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 
 final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'Files': (data) async => NavBarPage(initialPage: 'FilesWidget'),
+  'NewDevices': (data) async => hasMatchingParameters(data, {'userID'})
+      ? NewDevicesWidget(
+          userID: getParameter(data, 'userID'),
+        )
+      : NavBarPage(initialPage: 'NewDevicesWidget'),
   'Folder': (data) async => FolderWidget(
         folderName: getParameter(data, 'folderName'),
       ),
   'Onboarding': (data) async => OnboardingWidget(),
-  'Auth': (data) async => AuthWidget(),
+  'Authi': (data) async => AuthiWidget(),
   'AuthRegister': (data) async => AuthRegisterWidget(),
   'forgotPassword': (data) async => ForgotPasswordWidget(),
   'Profile': (data) async => ProfileWidget(),
@@ -99,6 +105,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'ServerTest': (data) async => ServerTestWidget(),
   'PhoneAuth': (data) async => PhoneAuthWidget(),
   'Verify': (data) async => VerifyWidget(),
+  'Groups': (data) async => NavBarPage(initialPage: 'GroupsWidget'),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

@@ -43,12 +43,12 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
         ),
         title: Text(
           'Phone Sign In',
-          style: FlutterFlowTheme.title2.override(
-            fontFamily: 'Lexend Deca',
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Lexend Deca',
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -77,19 +77,19 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Your Phone Number',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0x98FFFFFF),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0x98FFFFFF),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   hintText: 'Please enter a valid number...',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0x98FFFFFF),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0x98FFFFFF),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
@@ -109,12 +109,12 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20, 24, 20, 24),
                 ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
               ),
             ),
             Padding(
@@ -150,12 +150,12 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                   width: 230,
                   height: 60,
                   color: Colors.white,
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF4B39EF),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF4B39EF),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
                   elevation: 3,
                   borderSide: BorderSide(
                     color: Colors.transparent,

@@ -23,7 +23,7 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.tertiaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
         automaticallyImplyLeading: true,
         leading: InkWell(
           onTap: () async {
@@ -37,10 +37,10 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
         ),
         title: Text(
           'Server Data',
-          style: FlutterFlowTheme.title1.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.dark900,
-          ),
+          style: FlutterFlowTheme.of(context).title1.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).dark900,
+              ),
         ),
         actions: [],
         centerTitle: true,
@@ -66,7 +66,7 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                           width: 50,
                           height: 50,
                           child: SpinKitPulse(
-                            color: FlutterFlowTheme.primaryColor,
+                            color: FlutterFlowTheme.of(context).primaryColor,
                             size: 50,
                           ),
                         ),
@@ -85,12 +85,14 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                             children: [
                               Text(
                                 'Server Usage',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF57636C),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ],
                           ),
@@ -103,23 +105,27 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                             children: [
                               Text(
                                 'Requests',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF8B97A2),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF8B97A2),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                               ),
                               Text(
                                 GetInfoCall.requests(
                                   (priceSummaryGetInfoResponse?.jsonBody ?? ''),
                                 ).toString(),
-                                style: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF151B1E),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF151B1E),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                             ],
                           ),
@@ -132,23 +138,27 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                             children: [
                               Text(
                                 'Whats 1 +1?',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF8B97A2),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF8B97A2),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                               ),
                               Text(
                                 GetInfoCall.math(
                                   (priceSummaryGetInfoResponse?.jsonBody ?? ''),
                                 ).toString(),
-                                style: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF151B1E),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF151B1E),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                             ],
                           ),
@@ -161,23 +171,27 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                             children: [
                               Text(
                                 'Server running',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF8B97A2),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF8B97A2),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                               ),
                               Text(
                                 GetInfoCall.time(
                                   (priceSummaryGetInfoResponse?.jsonBody ?? ''),
                                 ).toString(),
-                                style: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF151B1E),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF151B1E),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                             ],
                           ),
@@ -194,12 +208,14 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                                 children: [
                                   Text(
                                     'Send Request',
-                                    style: FlutterFlowTheme.title3.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .title3
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF8B97A2),
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal,
+                                        ),
                                   ),
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
@@ -226,16 +242,19 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                                       SnackBar(
                                         content: Text(
                                           'Connection established.',
-                                          style: FlutterFlowTheme.bodyText1
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
+                                              ),
                                         ),
                                         duration: Duration(milliseconds: 1100),
                                         backgroundColor:
-                                            FlutterFlowTheme.primaryColor,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryColor,
                                       ),
                                     );
                                   } else {
@@ -243,7 +262,8 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                                       SnackBar(
                                         content: Text(
                                           'Failed connection to server.',
-                                          style: FlutterFlowTheme.title3,
+                                          style: FlutterFlowTheme.of(context)
+                                              .title3,
                                         ),
                                         duration: Duration(milliseconds: 4000),
                                         backgroundColor: Color(0x00000000),
@@ -257,12 +277,13 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                                 options: FFButtonOptions(
                                   width: 130,
                                   height: 40,
-                                  color: FlutterFlowTheme.grayIcon,
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
-                                  ),
+                                  color: FlutterFlowTheme.of(context).grayIcon,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Colors.white,
+                                      ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,
@@ -283,7 +304,7 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                   (apiCallOutput?.jsonBody ?? ''),
                   r'''$.data''',
                 ).toString(),
-                style: FlutterFlowTheme.bodyText1,
+                style: FlutterFlowTheme.of(context).bodyText1,
               ),
             ],
           ),

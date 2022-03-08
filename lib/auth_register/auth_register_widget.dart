@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
-import '../auth/auth_widget.dart';
+import '../authi/authi_widget.dart';
+import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -7,6 +8,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
 import '../phone_auth/phone_auth_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,17 +21,24 @@ class AuthRegisterWidget extends StatefulWidget {
 }
 
 class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
+  ApiCallResponse apiCallOutput3;
   TextEditingController myConfirmPasswordController;
   bool myConfirmPasswordVisibility;
   TextEditingController myEmailController;
   TextEditingController myNameFController;
   TextEditingController myPasswordController;
   bool myPasswordVisibility;
+  ApiCallResponse apiUid;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      apiUid = await GetUidCall.call();
+    });
+
     myConfirmPasswordController = TextEditingController();
     myConfirmPasswordVisibility = false;
     myEmailController = TextEditingController();
@@ -100,7 +109,7 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                           duration: Duration(milliseconds: 0),
                                           reverseDuration:
                                               Duration(milliseconds: 0),
-                                          child: AuthWidget(),
+                                          child: AuthiWidget(),
                                         ),
                                       );
                                     },
@@ -109,13 +118,14 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                       width: 100,
                                       height: 50,
                                       color: Color(0xFF4B39EF),
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle1.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: Color(0x98FFFFFF),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .subtitle1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: Color(0x98FFFFFF),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1,
@@ -130,12 +140,14 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                 children: [
                                   Text(
                                     'Sign Up',
-                                    style: FlutterFlowTheme.subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .subtitle1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -162,19 +174,23 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Full Name',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               hintText: 'Enter your name...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -194,12 +210,13 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   20, 24, 20, 24),
                             ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                           ),
                         ),
                         Padding(
@@ -210,19 +227,23 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Email Address',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               hintText: 'Enter your email...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -242,12 +263,13 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   20, 24, 20, 24),
                             ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                           ),
                         ),
                         Padding(
@@ -258,19 +280,23 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                             obscureText: !myPasswordVisibility,
                             decoration: InputDecoration(
                               labelText: 'Password',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               hintText: 'Enter your password...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -303,12 +329,13 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                           ),
                         ),
                         Padding(
@@ -319,19 +346,23 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                             obscureText: !myConfirmPasswordVisibility,
                             decoration: InputDecoration(
                               labelText: 'Confirm Password',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               hintText: 'Confirm  your password...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -364,12 +395,13 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                           ),
                         ),
                         Padding(
@@ -401,37 +433,87 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                 email: myEmailController.text,
                                 displayName: myNameFController.text,
                                 createdTime: getCurrentTimestamp,
-                                uid: FFAppState().uids,
+                                uid: getJsonField(
+                                  (apiUid?.jsonBody ?? ''),
+                                  r'''$.uid''',
+                                ).toString(),
+                                lastLogin: getCurrentTimestamp,
                               );
                               await UsersRecord.collection
                                   .doc(user.uid)
                                   .update(usersCreateData);
 
+                              apiCallOutput3 = await CheckUserCall.call(
+                                userId: getJsonField(
+                                  (apiUid?.jsonBody ?? ''),
+                                  r'''$.uid''',
+                                ).toString(),
+                                userName: myNameFController.text,
+                              );
+                              if (apiCallOutput3.succeeded) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Connected with: ${getJsonField(
+                                        (apiUid?.jsonBody ?? ''),
+                                        r'''$.uid''',
+                                      ).toString()}',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
+                                          ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor: Colors.green,
+                                  ),
+                                );
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Failed application server connection.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
+                                          ),
+                                    ),
+                                    duration: Duration(milliseconds: 3000),
+                                    backgroundColor: Color(0xFFFF604F),
+                                  ),
+                                );
+                                return;
+                              }
                               await Navigator.push(
                                 context,
                                 PageTransition(
                                   type: PageTransitionType.bottomToTop,
-                                  duration: Duration(milliseconds: 500),
-                                  reverseDuration: Duration(milliseconds: 500),
+                                  duration: Duration(milliseconds: 400),
+                                  reverseDuration: Duration(milliseconds: 400),
                                   child: NavBarPage(initialPage: 'HomePage'),
                                 ),
                               );
-                              setState(() =>
-                                  FFAppState().email = myEmailController.text);
-                              setState(() => FFAppState().displayName =
-                                  myNameFController.text);
+
+                              setState(() {});
                             },
                             text: 'Register',
                             options: FFButtonOptions(
                               width: 230,
                               height: 60,
                               color: Colors.white,
-                              textStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF4B39EF),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF4B39EF),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                               elevation: 3,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -452,12 +534,14 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                     EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                 child: Text(
                                   'Or create an account with socials',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0x98FFFFFF),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0x98FFFFFF),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                 ),
                               ),
                             ],

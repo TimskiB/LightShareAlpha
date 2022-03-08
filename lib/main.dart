@@ -15,6 +15,8 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home_page/home_page_widget.dart';
 import 'files/files_widget.dart';
+import 'new_devices/new_devices_widget.dart';
+import 'groups/groups_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +36,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale _locale;
+  ThemeMode _themeMode = ThemeMode.system;
   Stream<LightShareFirebaseUser> userStream;
   LightShareFirebaseUser initialUser;
   bool displaySplashImage = true;
@@ -41,6 +44,9 @@ class _MyAppState extends State<MyApp> {
   final fcmTokenSub = fcmTokenUserStream.listen((_) {});
 
   void setLocale(Locale value) => setState(() => _locale = value);
+  void setThemeMode(ThemeMode mode) => setState(() {
+        _themeMode = mode;
+      });
 
   @override
   void initState() {
@@ -70,10 +76,11 @@ class _MyAppState extends State<MyApp> {
       ],
       locale: _locale,
       supportedLocales: const [Locale('en', '')],
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(brightness: Brightness.light),
+      themeMode: _themeMode,
       home: initialUser == null || displaySplashImage
           ? Container(
-              color: FlutterFlowTheme.tertiaryColor,
+              color: FlutterFlowTheme.of(context).tertiaryColor,
               child: Builder(
                 builder: (context) => Image.asset(
                   'assets/images/undraw_progressive_app_m9ms.png',
@@ -112,6 +119,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'HomePage': HomePageWidget(),
       'Files': FilesWidget(),
+      'NewDevices': NewDevicesWidget(),
+      'Groups': GroupsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -120,12 +129,12 @@ class _NavBarPageState extends State<NavBarPage> {
         selectedIndex: currentIndex,
         onTabChange: (i) =>
             setState(() => _currentPage = tabs.keys.toList()[i]),
-        backgroundColor: FlutterFlowTheme.dark900,
-        color: FlutterFlowTheme.grayIcon,
-        activeColor: FlutterFlowTheme.tertiaryColor,
-        tabBackgroundColor: FlutterFlowTheme.primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).dark900,
+        color: FlutterFlowTheme.of(context).grayIcon,
+        activeColor: FlutterFlowTheme.of(context).tertiaryColor,
+        tabBackgroundColor: FlutterFlowTheme.of(context).primaryColor,
         tabActiveBorder: Border.all(
-          color: FlutterFlowTheme.primaryColor,
+          color: FlutterFlowTheme.of(context).primaryColor,
           width: 3,
         ),
         tabBorderRadius: 20,
@@ -144,6 +153,16 @@ class _NavBarPageState extends State<NavBarPage> {
           GButton(
             icon: Icons.folder_rounded,
             text: 'Files',
+            iconSize: 24,
+          ),
+          GButton(
+            icon: Icons.devices_rounded,
+            text: 'Devices',
+            iconSize: 24,
+          ),
+          GButton(
+            icon: Icons.people_alt,
+            text: 'Buddies',
             iconSize: 24,
           )
         ],

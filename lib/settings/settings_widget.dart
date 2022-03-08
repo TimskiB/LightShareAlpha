@@ -41,12 +41,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
         ),
         title: Text(
           'Settings Page',
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Lexend Deca',
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.normal,
-          ),
+          style: FlutterFlowTheme.of(context).bodyText1.override(
+                fontFamily: 'Lexend Deca',
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -64,12 +64,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 Expanded(
                   child: Text(
                     'Choose what notifcations you want to recieve below and I will update the settings.',
-                    style: FlutterFlowTheme.bodyText2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF8B97A2),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF8B97A2),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
                   ),
                 ),
               ],
@@ -83,21 +83,21 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   setState(() => switchListTileValue1 = newValue),
               title: Text(
                 'Push Notifications',
-                style: FlutterFlowTheme.title3.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: FlutterFlowTheme.of(context).title3.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               subtitle: Text(
                 'Receive Push notifications from me when new data received for your device and account.',
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF8B97A2),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF8B97A2),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
               ),
               activeColor: Color(0xFF4B39EF),
               activeTrackColor: Color(0xFF3B2DB6),
@@ -112,21 +112,21 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 setState(() => switchListTileValue2 = newValue),
             title: Text(
               'Email Notifications',
-              style: FlutterFlowTheme.title3.override(
-                fontFamily: 'Lexend Deca',
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: FlutterFlowTheme.of(context).title3.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             subtitle: Text(
               'Receive email notifications.',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'Lexend Deca',
-                color: Color(0xFF8B97A2),
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Color(0xFF8B97A2),
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
             ),
             activeColor: Color(0xFF4B39EF),
             activeTrackColor: Color(0xFF3B2DB6),
@@ -140,21 +140,21 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 setState(() => switchListTileValue3 = newValue),
             title: Text(
               'Storage Access',
-              style: FlutterFlowTheme.title3.override(
-                fontFamily: 'Lexend Deca',
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: FlutterFlowTheme.of(context).title3.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             subtitle: Text(
               'Allow me to use your storage files in order to send and receive files for you.',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'Lexend Deca',
-                color: Color(0xFF8B97A2),
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Color(0xFF8B97A2),
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
             ),
             activeColor: Color(0xFF4B39EF),
             activeTrackColor: Color(0xFF3B2DB6),
@@ -173,12 +173,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 width: 190,
                 height: 50,
                 color: Color(0xFF4B39EF),
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
+                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
                 elevation: 3,
                 borderSide: BorderSide(
                   color: Colors.transparent,

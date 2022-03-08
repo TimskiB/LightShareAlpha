@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "313694486276",
+    "project_id": "lightshare-b528a",
+    "storage_bucket": "lightshare-b528a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313694486276:android:fea948672cf2721670da51",
+        "android_client_info": {
+          "package_name": "com.flutterflow.lightshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313694486276-01518gk61b24ajmi8ceoq3qvi74ofdq8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.lightshare",
+            "certificate_hash": "4fdaa665a90ceee37ee7455293e03efe6167fcbe"
+          }
+        },
+        {
+          "client_id": "313694486276-rsmpuripoc84ng2lc9c7d66rfggbrn3k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.lightshare",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "313694486276-2j4q1bevt2one1kf628bm0mkosn1quml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaU-6gkTyj_bXFRG-KNuD_UCroNeckViA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313694486276-2j4q1bevt2one1kf628bm0mkosn1quml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

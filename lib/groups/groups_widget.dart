@@ -145,7 +145,7 @@ class _GroupsWidgetState extends State<GroupsWidget> {
                       child: SizedBox(
                         width: 50,
                         height: 50,
-                        child: SpinKitPulse(
+                        child: SpinKitRing(
                           color: FlutterFlowTheme.of(context).primaryColor,
                           size: 50,
                         ),
@@ -304,7 +304,7 @@ class _GroupsWidgetState extends State<GroupsWidget> {
                         ),
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1,
+                      width: 0,
                     ),
                     borderRadius: 12,
                   ),

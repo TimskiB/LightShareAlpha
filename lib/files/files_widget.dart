@@ -87,7 +87,7 @@ class _FilesWidgetState extends State<FilesWidget>
             child: SizedBox(
               width: 50,
               height: 50,
-              child: SpinKitPulse(
+              child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
@@ -284,7 +284,7 @@ class _FilesWidgetState extends State<FilesWidget>
                                 child: SizedBox(
                                   width: 50,
                                   height: 50,
-                                  child: SpinKitPulse(
+                                  child: SpinKitRing(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryColor,
                                     size: 50,
@@ -313,7 +313,7 @@ class _FilesWidgetState extends State<FilesWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10, 10, 10, 10),
                                 child: Row(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Container(
                                       width: 80,
@@ -427,29 +427,43 @@ class _FilesWidgetState extends State<FilesWidget>
                                                   fontSize: 12,
                                                 ),
                                           ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-0.4, 0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 15, 0),
-                                              child: LinearPercentIndicator(
-                                                  percent: getJsonField(
-                                                    (containerFilesInfoResponse
-                                                            ?.jsonBody ??
-                                                        ''),
-                                                    r'''$.percentage''',
-                                                  ),
-                                                  width: 200,
-                                                  lineHeight: 12,
-                                                  animation: true,
-                                                  progressColor:
-                                                      Color(0xFF51A3EF),
-                                                  backgroundColor:
-                                                      Color(0xFFB7CFF0),
-                                                  barRadius:
-                                                      Radius.circular(30)),
-                                            ),
+                                          Wrap(
+                                            spacing: 0,
+                                            runSpacing: 0,
+                                            alignment: WrapAlignment.start,
+                                            crossAxisAlignment:
+                                                WrapCrossAlignment.start,
+                                            direction: Axis.horizontal,
+                                            runAlignment: WrapAlignment.start,
+                                            verticalDirection:
+                                                VerticalDirection.down,
+                                            clipBehavior: Clip.none,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.4, 0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 0, 15, 0),
+                                                  child: LinearPercentIndicator(
+                                                      percent: getJsonField(
+                                                        (containerFilesInfoResponse
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                        r'''$.percentage''',
+                                                      ),
+                                                      width: 200,
+                                                      lineHeight: 12,
+                                                      animation: true,
+                                                      progressColor:
+                                                          Color(0xFF51A3EF),
+                                                      backgroundColor:
+                                                          Color(0xFFB7CFF0),
+                                                      barRadius:
+                                                          Radius.circular(30)),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),

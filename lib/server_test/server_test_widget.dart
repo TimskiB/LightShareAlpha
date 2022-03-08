@@ -65,7 +65,7 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                         child: SizedBox(
                           width: 50,
                           height: 50,
-                          child: SpinKitPulse(
+                          child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primaryColor,
                             size: 50,
                           ),
@@ -237,7 +237,7 @@ class _ServerTestWidgetState extends State<ServerTestWidget> {
                                 onPressed: () async {
                                   apiCallOutput =
                                       await TestConnectionCall.call();
-                                  if (apiCallOutput.succeeded) {
+                                  if ((apiCallOutput?.succeeded ?? true)) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(

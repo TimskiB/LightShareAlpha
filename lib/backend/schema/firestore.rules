@@ -22,7 +22,7 @@ service cloud.firestore {
       allow delete: if false;
     }
 
-    match /chats/{document} {
+    match /files/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if false;

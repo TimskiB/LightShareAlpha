@@ -450,7 +450,7 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                 ).toString(),
                                 userName: myNameFController.text,
                               );
-                              if (apiCallOutput3.succeeded) {
+                              if ((apiCallOutput3?.succeeded ?? true)) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
@@ -487,8 +487,8 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                     backgroundColor: Color(0xFFFF604F),
                                   ),
                                 );
-                                return;
                               }
+
                               await Navigator.push(
                                 context,
                                 PageTransition(

@@ -3,7 +3,6 @@ import '../backend/backend.dart';
 import '../components/new_device_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../custom_code/actions/index.dart' as actions;
 import '../custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -23,7 +22,6 @@ class NewDevicesWidget extends StatefulWidget {
 }
 
 class _NewDevicesWidgetState extends State<NewDevicesWidget> {
-  String deviceUidParam;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -50,7 +48,7 @@ class _NewDevicesWidgetState extends State<NewDevicesWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: SpinKitPulse(
+              child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
@@ -80,7 +78,6 @@ class _NewDevicesWidgetState extends State<NewDevicesWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
                 child: InkWell(
                   onTap: () async {
-                    deviceUidParam = await actions.getDeviceUid();
                     await showModalBottomSheet(
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
@@ -95,17 +92,11 @@ class _NewDevicesWidgetState extends State<NewDevicesWidget> {
                                 newDevicesUsersRecord.uid,
                                 'default',
                               ),
-                              deviceUidPar: valueOrDefault<String>(
-                                deviceUidParam,
-                                'default',
-                              ),
                             ),
                           ),
                         );
                       },
                     );
-
-                    setState(() {});
                   },
                   child: Icon(
                     Icons.add_rounded,
@@ -134,7 +125,7 @@ class _NewDevicesWidgetState extends State<NewDevicesWidget> {
                     child: SizedBox(
                       width: 50,
                       height: 50,
-                      child: SpinKitPulse(
+                      child: SpinKitRing(
                         color: FlutterFlowTheme.of(context).primaryColor,
                         size: 50,
                       ),
@@ -179,7 +170,7 @@ class _NewDevicesWidgetState extends State<NewDevicesWidget> {
                                               child: SizedBox(
                                                 width: 50,
                                                 height: 50,
-                                                child: SpinKitPulse(
+                                                child: SpinKitRing(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryColor,

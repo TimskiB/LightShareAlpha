@@ -7,7 +7,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/users_record.dart';
 import 'schema/devices_record.dart';
 import 'schema/conversations_record.dart';
-import 'schema/chats_record.dart';
+import 'schema/files_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,7 +17,7 @@ export 'schema/serializers.dart';
 export 'schema/users_record.dart';
 export 'schema/devices_record.dart';
 export 'schema/conversations_record.dart';
-export 'schema/chats_record.dart';
+export 'schema/files_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Stream<List<UsersRecord>> queryUsersRecord(
@@ -66,19 +66,19 @@ Future<List<ConversationsRecord>> queryConversationsRecordOnce(
         ConversationsRecord.collection, ConversationsRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-/// Functions to query ChatsRecords (as a Stream and as a Future).
-Stream<List<ChatsRecord>> queryChatsRecord(
+/// Functions to query FilesRecords (as a Stream and as a Future).
+Stream<List<FilesRecord>> queryFilesRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(ChatsRecord.collection, ChatsRecord.serializer,
+    queryCollection(FilesRecord.collection, FilesRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<ChatsRecord>> queryChatsRecordOnce(
+Future<List<FilesRecord>> queryFilesRecordOnce(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollectionOnce(ChatsRecord.collection, ChatsRecord.serializer,
+    queryCollectionOnce(FilesRecord.collection, FilesRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

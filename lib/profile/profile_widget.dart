@@ -35,7 +35,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: SpinKitPulse(
+              child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
@@ -127,7 +127,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           child: SizedBox(
                                             width: 50,
                                             height: 50,
-                                            child: SpinKitPulse(
+                                            child: SpinKitRing(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,

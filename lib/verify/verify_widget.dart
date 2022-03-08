@@ -136,6 +136,7 @@ class _VerifyWidgetState extends State<VerifyWidget> {
                   if (phoneVerifiedUser == null) {
                     return;
                   }
+
                   await Navigator.push(
                     context,
                     PageTransition(

@@ -308,7 +308,7 @@ class _AuthiWidgetState extends State<AuthiWidget> {
                                   child: SizedBox(
                                     width: 50,
                                     height: 50,
-                                    child: SpinKitPulse(
+                                    child: SpinKitRing(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
                                       size: 50,
@@ -345,7 +345,7 @@ class _AuthiWidgetState extends State<AuthiWidget> {
                                       'default-name-flutterflow',
                                     ),
                                   );
-                                  if (apiCallOutput2.succeeded) {
+                                  if ((apiCallOutput2?.succeeded ?? true)) {
                                     await Navigator.pushAndRemoveUntil(
                                       context,
                                       PageTransition(
@@ -377,14 +377,6 @@ class _AuthiWidgetState extends State<AuthiWidget> {
                                       ),
                                     );
                                   }
-                                  await Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          NavBarPage(initialPage: 'HomePage'),
-                                    ),
-                                    (r) => false,
-                                  );
 
                                   setState(() {});
                                 },

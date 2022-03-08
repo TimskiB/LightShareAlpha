@@ -36,7 +36,7 @@ class _ShareOptionsWidgetState extends State<ShareOptionsWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: SpinKitPulse(
+              child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
@@ -144,7 +144,7 @@ class _ShareOptionsWidgetState extends State<ShareOptionsWidget> {
                           child: SizedBox(
                             width: 50,
                             height: 50,
-                            child: SpinKitPulse(
+                            child: SpinKitRing(
                               color: FlutterFlowTheme.of(context).primaryColor,
                               size: 50,
                             ),
@@ -250,7 +250,7 @@ class _ShareOptionsWidgetState extends State<ShareOptionsWidget> {
                           child: SizedBox(
                             width: 50,
                             height: 50,
-                            child: SpinKitPulse(
+                            child: SpinKitRing(
                               color: FlutterFlowTheme.of(context).primaryColor,
                               size: 50,
                             ),
@@ -403,7 +403,7 @@ class _ShareOptionsWidgetState extends State<ShareOptionsWidget> {
                           child: SizedBox(
                             width: 50,
                             height: 50,
-                            child: SpinKitPulse(
+                            child: SpinKitRing(
                               color: FlutterFlowTheme.of(context).primaryColor,
                               size: 50,
                             ),

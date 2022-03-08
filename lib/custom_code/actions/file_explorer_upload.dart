@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 import 'package:file_picker/file_picker.dart';
 
-Future<List<String>> fileExplorerUpload() async {
+//Future<List<String>> fileExplorerUpload() async {
+Future<String> fileExplorerUpload() async {
   // Add your function code here!
   FilePickerResult result = await FilePicker.platform.pickFiles();
 
@@ -14,17 +15,13 @@ Future<List<String>> fileExplorerUpload() async {
     //File file = File(result.files.single.path);
     PlatformFile file = result.files.first;
     print(file.name);
-    print(file.bytes);
-    print(file.size);
-    print(file.extension);
-    print(file.path);
-    return [
-      file.name,
-      file.path.toString(),
-      file.size.toString(),
-      file.extension.toString()
-    ];
+    //print(file.bytes);
+    //print(file.size);
+    //print(file.extension);
+    //print(file.path);
+    return file.name;
   } else {
     // User canceled the picker
+    return "Error";
   }
 }

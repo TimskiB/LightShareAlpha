@@ -657,20 +657,20 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                                 child: InkWell(
-                                  onTap: () async {
-                                    final user = await signInWithApple(context);
-                                    if (user == null) {
-                                      return;
-                                    }
-                                    await Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            NavBarPage(initialPage: 'HomePage'),
-                                      ),
-                                      (r) => false,
-                                    );
-                                  },
+                                  // onTap: () async {
+                                  //   final user = await signInWithApple(context);
+                                  //   if (user == null) {
+                                  //     return;
+                                  //   }
+                                  //   await Navigator.pushAndRemoveUntil(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //       builder: (context) =>
+                                  //           NavBarPage(initialPage: 'HomePage'),
+                                  //     ),
+                                  //     (r) => false,
+                                  //   );
+                                  // },
                                   child: Card(
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     color: Color(0xFF090F13),
@@ -681,21 +681,21 @@ class _AuthRegisterWidgetState extends State<AuthRegisterWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           2, 2, 2, 2),
                                       child: InkWell(
-                                        onTap: () async {
-                                          final user =
-                                              await signInWithApple(context);
-                                          if (user == null) {
-                                            return;
-                                          }
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => NavBarPage(
-                                                  initialPage: 'HomePage'),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
+                                        // onTap: () async {
+                                        //   final user =
+                                        //       await signInWithApple(context);
+                                        //   if (user == null) {
+                                        //     return;
+                                        //   }
+                                        //   await Navigator.pushAndRemoveUntil(
+                                        //     context,
+                                        //     MaterialPageRoute(
+                                        //       builder: (context) => NavBarPage(
+                                        //           initialPage: 'HomePage'),
+                                        //     ),
+                                        //     (r) => false,
+                                        //   );
+                                        // },
                                         child: Container(
                                           width: 50,
                                           height: 50,

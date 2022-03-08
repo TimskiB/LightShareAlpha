@@ -594,21 +594,21 @@ class _AuthiWidgetState extends State<AuthiWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2, 2, 2, 2),
                                     child: InkWell(
-                                      onTap: () async {
-                                        final user =
-                                            await signInWithApple(context);
-                                        if (user == null) {
-                                          return;
-                                        }
-                                        await Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => NavBarPage(
-                                                initialPage: 'HomePage'),
-                                          ),
-                                          (r) => false,
-                                        );
-                                      },
+                                      // onTap: () async {
+                                      //   final user =
+                                      //       await signInWithApple(context);
+                                      //   if (user == null) {
+                                      //     return;
+                                      //   }
+                                      //   await Navigator.pushAndRemoveUntil(
+                                      //     context,
+                                      //     MaterialPageRoute(
+                                      //       builder: (context) => NavBarPage(
+                                      //           initialPage: 'HomePage'),
+                                      //     ),
+                                      //     (r) => false,
+                                      //   );
+                                      // },
                                       child: Container(
                                         width: 50,
                                         height: 50,
